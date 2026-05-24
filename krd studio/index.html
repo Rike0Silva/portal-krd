@@ -262,6 +262,81 @@
       transform: translateY(-4px);
     }
 
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .showcase-card {
+      background: rgba(255,255,255,0.075);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 32px;
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.4fr;
+      gap: 26px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .showcase-info h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .showcase-info p {
+      color: #c8c8c8;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .showcase-info a {
+      color: #000;
+      background: #fff;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      display: inline-block;
+    }
+
+    .device-preview {
+      display: grid;
+      grid-template-columns: 0.45fr 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .phone-frame,
+    .desktop-frame {
+      background: #101828;
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.38);
+      overflow: hidden;
+    }
+
+    .phone-frame {
+      border-radius: 34px;
+      padding: 8px;
+      aspect-ratio: 9 / 18;
+    }
+
+    .desktop-frame {
+      border-radius: 24px;
+      padding: 8px;
+      aspect-ratio: 16 / 10;
+    }
+
+    .phone-frame img,
+    .desktop-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+    }
+
     .about {
       background: rgba(255,255,255,0.055);
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -270,7 +345,7 @@
 
     .about-box {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: 0.8fr 0.8fr 1.2fr;
       gap: 32px;
       align-items: center;
     }
@@ -286,12 +361,33 @@
       padding: 30px;
     }
 
-    .about-logo {
-      width: 280px;
-      max-width: 100%;
+    .developer-photo {
+      width: 100%;
+      max-width: 380px;
       object-fit: contain;
       display: block;
-      margin: 0 auto 16px;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.45));
+    }
+
+    .company-logo-side {
+      width: 100%;
+      max-width: 300px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+    }
+
+    .developer-name {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .developer-role {
+      color: #cfcfcf;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .about-text h2 {
@@ -366,8 +462,15 @@
 
       section { padding: 42px 5%; }
 
-      .projects-grid {
+      .projects-grid,
+      .showcase-card,
+      .device-preview {
         grid-template-columns: 1fr;
+      }
+
+      .phone-frame {
+        max-width: 260px;
+        margin: 0 auto;
       }
 
       .about-box {
@@ -429,27 +532,49 @@
   <section id="projetos">
     <div class="section-title">
       <h2>Projetos disponíveis</h2>
-      <p>Escolha um aplicativo abaixo e acesse diretamente pelo botão.</p>
+      <p>Conheça alguns projetos desenvolvidos pela KRD Studio. Para acessar, testar ou solicitar uma versão personalizada, entre em contato.</p>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card">
-        <div>
+    <div class="showcase-grid">
+      <article class="showcase-card">
+        <div class="showcase-info">
           <img src="app-icon.png" alt="Ícone Controle de Gastos" class="project-img">
           <h3>Controle de Gastos</h3>
-          <p>Aplicativo desenvolvido para organizar despesas, valores, produtos e acompanhar gastos de forma simples, rápida e prática.</p>
+          <p>
+            Sistema para cadastrar produtos, calcular subtotais e organizar tabelas de gastos com exportação em PDF ou imagem.
+          </p>
+          <a href="https://wa.me/5588982239854" target="_blank">Saber mais</a>
         </div>
-        <a href="https://controle-app-ebon.vercel.app" target="_blank">Acessar projeto</a>
-      </div>
 
-      <div class="project-card">
-        <div>
+        <div class="device-preview">
+          <div class="phone-frame">
+            <img src="con-cel.jpg" alt="Controle de Gastos no celular">
+          </div>
+          <div class="desktop-frame">
+            <img src="con-com.png" alt="Controle de Gastos no computador">
+          </div>
+        </div>
+      </article>
+
+      <article class="showcase-card">
+        <div class="showcase-info">
           <img src="vetatende-logo.png" alt="Ícone VetAtende" class="project-img">
           <h3>VetAtende</h3>
-          <p>Aplicativo voltado para o acompanhamento de pets, consultas, vacinas e informações importantes para o cuidado animal.</p>
+          <p>
+            Plataforma inteligente para clínicas veterinárias, com controle de pets, vacinas, consultas, alertas e gerenciamento completo.
+          </p>
+          <a href="https://wa.me/5588982239854" target="_blank">Saber mais</a>
         </div>
-        <a href="https://vetatente.vercel.app" target="_blank">Acessar projeto</a>
-      </div>
+
+        <div class="device-preview">
+          <div class="phone-frame">
+            <img src="veat-cel.jpg" alt="VetAtende no celular">
+          </div>
+          <div class="desktop-frame">
+            <img src="veat-com.png" alt="VetAtende no computador">
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -535,20 +660,31 @@
     <div class="about-box">
       <div class="profile-box">
         <div>
-          <img src="logo-krd.png" alt="KRD Studio" class="about-logo">
-          <span>Desenvolvimento Web & Aplicativos</span>
+          <img src="ricardo.png" alt="Ricardo Silva" class="developer-photo">
+          <h3 class="developer-name">Ricardo Silva</h3>
+          <p class="developer-role">Desenvolvedor Web • KRD Studio</p>
         </div>
       </div>
+
+      <div class="profile-box">
+        <div>
+          <img src="logo-krd.png" alt="KRD Studio" class="company-logo-side">
+          <h3 class="developer-name">KRD Studio</h3>
+          <p class="developer-role">Soluções Web & Aplicativos</p>
+        </div>
+      </div>
+
       <div class="about-text">
-        <h2>Sobre a KRD Studio</h2>
+        <h2>Sobre o Desenvolvedor</h2>
         <p>
-          A KRD Studio desenvolve sites, sistemas e aplicativos personalizados para transformar ideias em soluções digitais acessíveis e funcionais.
+          Meu nome é Ricardo Silva, desenvolvedor web e fundador da KRD Studio.
+          Atualmente estou cursando Desenvolvimento de Sistemas e trabalhando na criação de aplicativos, sistemas e experiências digitais modernas.
         </p>
         <p>
-          Este portal funciona como uma vitrine oficial para reunir todos os projetos publicados, permitindo que clientes e usuários encontrem cada aplicação com facilidade.
+          Meu objetivo é transformar ideias em projetos funcionais, acessíveis e profissionais, desenvolvendo soluções responsivas que funcionam em celulares, computadores e tablets.
         </p>
         <p>
-          Nossos projetos são publicados com apoio de plataformas modernas de hospedagem, versionamento e desenvolvimento web.
+          Através da KRD Studio, busco criar plataformas modernas com foco em desempenho, identidade visual e facilidade de uso para clientes e usuários.
         </p>
         <div class="partners">
           <a class="partner-badge" href="https://vercel.com" target="_blank" aria-label="Vercel">
